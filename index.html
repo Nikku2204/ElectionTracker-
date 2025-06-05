@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Election Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
+</head>
+<body>
+  <h2>Election Tracker Demo</h2>
+
+  <button onclick="connectWallet()">Connect Wallet</button>
+  <p id="walletAddress">Wallet: Not Connected</p>
+
+  <h3>Upload Booth Data</h3>
+  <input id="boothId" placeholder="booth101"><br>
+  <input id="turnout" type="number" placeholder="Turnout %"><br>
+  <input id="resultHash" placeholder="Result Hash (IPFS link)"><br>
+  <button onclick="uploadData()">Upload</button>
+  <p id="uploadStatus"></p>
+
+  <h3>View Booth Data</h3>
+  <input id="viewBoothId" placeholder="booth101">
+  <button onclick="viewBoothData()">Get Data</button>
+  <pre id="boothData"></pre>
+
+  <script>
+    let provider, signer, contract;
+
+    const contractAddress = "PASTE_YOUR_CONTRACT_ADDRESS_HERE";
+    const abi = PASTE_ABI_JSON_HERE;
+
+    async function connectWallet() {
+      provider = new ethers.providers.Web3Provider(window.ethereum);
+      await provider.send("eth_requestAccounts", []);
+      signer = provider.getSigner();
+      document.getElementById("walletAddress").innerText = "Wallet: " + await signer.getAddress();
+      contract = new ethers.Contract(contractAddress, abi, signer);
+    }
+
+    async function uploadData() {
+      const boothId = document.getElementById("boothId").value;
+      const turnout = document.getElementById("turnout").value;
+      const resultHash = document.getElementById("resultHash").value;
+      try {
+        const tx = await contract.uploadBoothData(boothId, turnout, resultHash);
+        await tx.wait();
+        document.getElementById("uploadStatus").innerText = "Upload successful!";
+      } catch (err) {
+        document.getElementById("uploadStatus").innerText = "Error: " + err.message;
+      }
+    }
+
+    async function viewBoothData() {
+      const boothId = document.getElementById("viewBoothId").value;
+      try {
+        const data = await contract.getBoothData(boothId);
+        document.getElementById("boothData").innerText = `
+          Booth: ${data.boothId}
+          Turnout: ${data.turnoutPercent}%
+          Hash: ${data.resultHash}
+          Uploaded by: ${data.uploadedBy}
+          Timestamp: ${new Date(data.timestamp * 1000).toLocaleString()}
+        `;
+      } catch (err) {
+        document.getElementById("boothData").innerText = "Error: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
