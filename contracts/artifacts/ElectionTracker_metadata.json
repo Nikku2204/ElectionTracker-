@@ -1,0 +1,408 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"name": "AdminAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"name": "AdminRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "boothId",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "turnoutPercent",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "resultHash",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "uploadedBy",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "BoothDataUploaded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"name": "addAdmin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "allBoothIds",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "authorizedAdmins",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "booths",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "boothId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "turnoutPercent",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "resultHash",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "uploadedBy",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "isValid",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllBoothIds",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "boothId",
+						"type": "string"
+					}
+				],
+				"name": "getBoothData",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "boothId",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "turnoutPercent",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "resultHash",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "uploadedBy",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "isValid",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct ElectionTracker.BoothData",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalBooths",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"name": "isAdmin",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"name": "removeAdmin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "boothId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "turnoutPercent",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "resultHash",
+						"type": "string"
+					}
+				],
+				"name": "uploadBoothData",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Main contract for tracking election data on blockchain",
+			"kind": "dev",
+			"methods": {
+				"addAdmin(address)": {
+					"details": "Add new admin",
+					"params": {
+						"admin": "Address to be granted admin privileges"
+					}
+				},
+				"getAllBoothIds()": {
+					"details": "Get all booth IDs",
+					"returns": {
+						"_0": "Array of all booth IDs"
+					}
+				},
+				"getBoothData(string)": {
+					"details": "Get booth data from blockchain",
+					"params": {
+						"boothId": "Unique identifier for the booth"
+					},
+					"returns": {
+						"_0": "BoothData struct containing all booth information"
+					}
+				},
+				"getTotalBooths()": {
+					"details": "Get total number of booths",
+					"returns": {
+						"_0": "Total count of booths"
+					}
+				},
+				"isAdmin(address)": {
+					"details": "Check if address is authorized admin",
+					"params": {
+						"admin": "Address to check"
+					},
+					"returns": {
+						"_0": "Boolean indicating admin status"
+					}
+				},
+				"removeAdmin(address)": {
+					"details": "Remove admin",
+					"params": {
+						"admin": "Address to remove admin privileges"
+					}
+				},
+				"uploadBoothData(string,uint256,string)": {
+					"details": "Upload booth data to blockchain",
+					"params": {
+						"boothId": "Unique identifier for the booth",
+						"resultHash": "IPFS hash of detailed results",
+						"turnoutPercent": "Voter turnout percentage (0-100)"
+					}
+				}
+			},
+			"title": "ElectionTracker",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "This contract stores booth-level election data immutably",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ElectionTracker.sol": "ElectionTracker"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ElectionTracker.sol": {
+			"keccak256": "0x9f27931bede0e7a666f4ef1e8c7e06fa7ab47c4b969e8a840ca9f5c60faa5003",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e9494e871b18315c4610845bec8db059f895b3f0567b0e6fd18322f9bab890a5",
+				"dweb:/ipfs/QmZ1CQ3A2FN7Ki9JEbwqYDdg3B6fasZMzXAD9tZmJ1BYU6"
+			]
+		}
+	},
+	"version": 1
+}
