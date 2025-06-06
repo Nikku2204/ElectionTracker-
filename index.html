@@ -424,6 +424,145 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+    
+    /* Features Section Styling */
+    .features {
+      padding: 100px 20px;
+      background: #111111;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    /* Add this CSS after your existing .features styling */
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #a0a0a0;
+      margin-bottom: 4rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(102, 126, 234, 0.3);
+      box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+    }
+
+    .feature-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1);
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #ffffff;
+      transition: color 0.3s ease;
+    }
+
+    .feature-card:hover .feature-title {
+      color: #667eea;
+    }
+
+    .feature-description {
+      color: #a0a0a0;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .feature-card:hover .feature-description {
+      color: #cccccc;
+    }
+
+    /* Animation for fade-in effect */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
 
     /* Responsive Design */
     @media (max-width: 768px) {
@@ -472,7 +611,84 @@
       </div>
     </div>
   </section>
-
+  
+  <!-- Features Section - Replace your current features section with this -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title">Why Blockchain Elections?</h2>
+      <p class="section-subtitle">
+        Addressing critical challenges in traditional election systems through cutting-edge blockchain technology
+      </p>
+      
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="feature-title">Immutable Security</h3>
+          <p class="feature-description">
+            Every vote and result is cryptographically secured on the blockchain. Once recorded, 
+            data cannot be altered, deleted, or manipulated, ensuring complete election integrity.
+          </p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3 class="feature-title">Real-Time Transparency</h3>
+          <p class="feature-description">
+            Citizens can track booth-level turnout and results in real-time. No more waiting for 
+            official announcements or questioning the authenticity of election data.
+          </p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="feature-title">Public Verification</h3>
+          <p class="feature-description">
+            Anyone can independently verify election data using blockchain explorers. 
+            Every transaction is publicly auditable, building unprecedented trust in democracy.
+          </p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="feature-title">Instant Results</h3>
+          <p class="feature-description">
+            Automated compilation eliminates manual counting errors and reduces result 
+            declaration time by 70%, providing faster and more accurate election outcomes.
+          </p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <h3 class="feature-title">Cost Effective</h3>
+          <p class="feature-description">
+            Built on Sepolia for reliable testing. Reduces operational expenses by 50% 
+            while providing superior security and transparency compared to traditional systems.
+          </p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="feature-title">Accessible Interface</h3>
+          <p class="feature-description">
+            Simple web interface accessible on any smartphone or computer. No technical expertise 
+            required for citizens to verify election data and participate in democratic oversight.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- DApp Section -->
   <section id="dapp" class="dapp-section">
     <div class="container">
