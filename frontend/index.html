@@ -127,16 +127,18 @@
       color: white;
       transform: translateY(-3px);
     }
-    
-    /* Features Section */
-    .features {
-      padding: 100px 20px;
-      background: #111111;
-    }
-    
+
+    /* Container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* DApp Section */
+    .dapp-section {
+      padding: 100px 20px;
+      background: #111111;
     }
     
     .section-title {
@@ -158,116 +160,6 @@
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
-    }
-    
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      margin-bottom: 60px;
-    }
-    
-    .feature-card {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 40px 30px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-    
-    .feature-card:hover {
-      transform: translateY(-10px);
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(102, 126, 234, 0.3);
-    }
-    
-    .feature-icon {
-      font-size: 3rem;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
-    }
-    
-    .feature-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-      color: #ffffff;
-    }
-    
-    .feature-description {
-      color: #a0a0a0;
-      line-height: 1.6;
-    }
-    
-    /* How It Works Section */
-    .how-it-works {
-      padding: 100px 20px;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-      position: relative;
-    }
-    
-    .demo-video-container {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto 60px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    }
-    
-    .demo-video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 60px;
-    }
-    
-    .step-card {
-      text-align: center;
-      padding: 30px 20px;
-    }
-    
-    .step-number {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 0 auto 20px;
-      color: white;
-    }
-    
-    .step-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-    
-    .step-description {
-      color: #a0a0a0;
-      line-height: 1.6;
-    }
-    
-    /* DApp Section */
-    .dapp-section {
-      padding: 100px 20px;
-      background: #111111;
     }
     
     .dapp-grid {
@@ -431,13 +323,8 @@
       min-height: 120px;
       color: #cccccc;
     }
-    
-    /* Stats Section */
-    .stats-section {
-      grid-column: 1 / -1;
-      margin-top: 40px;
-    }
-    
+
+    /* Stats Grid */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -475,7 +362,7 @@
       margin-top: 8px;
       font-weight: 500;
     }
-    
+
     /* Booth Grid */
     .booth-grid {
       display: grid;
@@ -521,7 +408,7 @@
     .booth-meta div {
       margin-bottom: 5px;
     }
-    
+
     /* Loading Animation */
     .loading {
       display: inline-block;
@@ -537,19 +424,7 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-    
-    /* Decorative Image */
-    .decorative-image {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      width: 100px;
-      height: 100px;
-      opacity: 0.1;
-      z-index: 1;
-      border-radius: 20px;
-    }
-    
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .hero h1 {
@@ -568,48 +443,17 @@
       .btn-primary, .btn-secondary {
         width: 250px;
       }
-      
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .steps-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .decorative-image {
-        display: none;
-      }
-    }
-    
-    /* Scroll Animation */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .fade-in {
-      animation: fadeInUp 0.6s ease-out;
     }
   </style>
 </head>
 <body>
-  <!-- Decorative Image -->
-  <img src="image1.png" alt="Blockchain" class="decorative-image">
-
   <!-- Hero Section -->
   <section class="hero">
     <video autoplay muted loop class="hero-bg-video">
       <source src="video1.mp4" type="video/mp4">
     </video>
     
-    <div class="hero-content fade-in">
+    <div class="hero-content">
       <h1>🗳️ Blockchain Election Tracker</h1>
       <p class="hero-subtitle">Transparent • Immutable • Democratic</p>
       <p class="hero-description">
@@ -625,138 +469,6 @@
         <a href="#features" class="btn-secondary">
           <i class="fas fa-info-circle"></i> Learn More
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="features">
-    <div class="container">
-      <h2 class="section-title">Why Blockchain Elections?</h2>
-      <p class="section-subtitle">
-        Addressing critical challenges in traditional election systems through cutting-edge blockchain technology
-      </p>
-      
-      <div class="features-grid">
-        <div class="feature-card fade-in">
-          <div class="feature-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3 class="feature-title">Immutable Security</h3>
-          <p class="feature-description">
-            Every vote and result is cryptographically secured on the blockchain. Once recorded, 
-            data cannot be altered, deleted, or manipulated, ensuring complete election integrity.
-          </p>
-        </div>
-        
-        <div class="feature-card fade-in">
-          <div class="feature-icon">
-            <i class="fas fa-eye"></i>
-          </div>
-          <h3 class="feature-title">Real-Time Transparency</h3>
-          <p class="feature-description">
-            Citizens can track booth-level turnout and results in real-time. No more waiting for 
-            official announcements or questioning the authenticity of election data.
-          </p>
-        </div>
-        
-        <div class="feature-card fade-in">
-          <div class="feature-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <h3 class="feature-title">Public Verification</h3>
-          <p class="feature-description">
-            Anyone can independently verify election data using blockchain explorers. 
-            Every transaction is publicly auditable, building unprecedented trust in democracy.
-          </p>
-        </div>
-        
-        <div class="feature-card fade-in">
-          <div class="feature-icon">
-            <i class="fas fa-clock"></i>
-          </div>
-          <h3 class="feature-title">Instant Results</h3>
-          <p class="feature-description">
-            Automated compilation eliminates manual counting errors and reduces result 
-            declaration time by 70%, providing faster and more accurate election outcomes.
-          </p>
-        </div>
-        
-        <div class="feature-card fade-in">
-          <div class="feature-icon">
-            <i class="fas fa-dollar-sign"></i>
-          </div>
-          <h3 class="feature-title">Cost Effective</h3>
-          <p class="feature-description">
-            Built on Polygon for minimal transaction costs. Reduces operational expenses by 50% 
-            while providing superior security and transparency compared to traditional systems.
-          </p>
-        </div>
-        
-        <div class="feature-card fade-in">
-          <div class="feature-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3 class="feature-title">Accessible Interface</h3>
-          <p class="feature-description">
-            Simple web interface accessible on any smartphone or computer. No technical expertise 
-            required for citizens to verify election data and participate in democratic oversight.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works Section -->
-  <section id="how-it-works" class="how-it-works">
-    <div class="container">
-      <h2 class="section-title">How It Works</h2>
-      <p class="section-subtitle">
-        Simple, secure, and transparent election tracking in four easy steps
-      </p>
-      
-      <div class="demo-video-container">
-        <video autoplay muted loop class="demo-video">
-          <source src="video2.mp4" type="video/mp4">
-        </video>
-      </div>
-      
-      <div class="steps-grid">
-        <div class="step-card fade-in">
-          <div class="step-number">1</div>
-          <h3 class="step-title">Admin Upload</h3>
-          <p class="step-description">
-            Authorized election officials upload booth-level turnout and result data 
-            directly to smart contracts using secure multi-signature authentication.
-          </p>
-        </div>
-        
-        <div class="step-card fade-in">
-          <div class="step-number">2</div>
-          <h3 class="step-title">Blockchain Storage</h3>
-          <p class="step-description">
-            Data is permanently recorded on Polygon blockchain with cryptographic hashing. 
-            Detailed result documents are stored on IPFS for efficient storage.
-          </p>
-        </div>
-        
-        <div class="step-card fade-in">
-          <div class="step-number">3</div>
-          <h3 class="step-title">Real-Time Access</h3>
-          <p class="step-description">
-            Citizens access live election data through our public dashboard. 
-            All information is instantly available and independently verifiable.
-          </p>
-        </div>
-        
-        <div class="step-card fade-in">
-          <div class="step-number">4</div>
-          <h3 class="step-title">Public Verification</h3>
-          <p class="step-description">
-            Anyone can verify data authenticity using blockchain explorers. 
-            Complete transparency builds trust and accountability in the democratic process.
-          </p>
-        </div>
       </div>
     </div>
   </section>
@@ -854,8 +566,9 @@
         </div>
       </div>
 
+      <!-- Stats Section -->
       <div class="dapp-grid">
-        <div class="dapp-card stats-section">
+        <div class="dapp-card" style="grid-column: 1 / -1;">
           <h3 class="card-title">
             <span class="card-icon"><i class="fas fa-chart-bar"></i></span>
             Election Statistics
@@ -878,5 +591,314 @@
               <div class="stat-label">Last Update</div>
             </div>
             <div class="stat-card">
-              <span id="totalVotes" class="stat-number">0</span>
-              <div class="stat-label">Estimated Votes
+              <span id="connectedUsers" class="stat-number">1</span>
+              <div class="stat-label">Connected Users</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- All Booths Section -->
+      <div class="dapp-grid">
+        <div class="dapp-card" style="grid-column: 1 / -1;">
+          <h3 class="card-title">
+            <span class="card-icon"><i class="fas fa-list"></i></span>
+            All Booths Overview
+          </h3>
+          <div id="boothGrid" class="booth-grid">
+            <p style="text-align: center; color: #6b7280; grid-column: 1 / -1;">
+              Click "Load All Booths" to view data
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const contractAddress = "0xF7cB8d622829249b326a52e9b3CA87431D62ec89";
+
+    const abi = [
+      {
+        "inputs": [
+          { "internalType": "string", "name": "boothId", "type": "string" },
+          { "internalType": "uint256", "name": "turnoutPercent", "type": "uint256" },
+          { "internalType": "string", "name": "resultHash", "type": "string" }
+        ],
+        "name": "uploadBoothData",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "boothId", "type": "string" }
+        ],
+        "name": "getBoothData",
+        "outputs": [
+          {
+            "components": [
+              { "internalType": "string", "name": "boothId", "type": "string" },
+              { "internalType": "uint256", "name": "turnoutPercent", "type": "uint256" },
+              { "internalType": "string", "name": "resultHash", "type": "string" },
+              { "internalType": "uint256", "name": "timestamp", "type": "uint256" },
+              { "internalType": "address", "name": "uploadedBy", "type": "address" },
+              { "internalType": "bool", "name": "isValid", "type": "bool" }
+            ],
+            "internalType": "struct ElectionTracker.BoothData",
+            "name": "",
+            "type": "tuple"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getAllBoothIds",
+        "outputs": [
+          { "internalType": "string[]", "name": "", "type": "string[]" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getTotalBooths",
+        "outputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "address", "name": "admin", "type": "address" }
+        ],
+        "name": "isAdmin",
+        "outputs": [
+          { "internalType": "bool", "name": "", "type": "bool" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ];
+
+    let signer;
+    let contract;
+    let userAddress;
+
+    async function connectWallet() {
+      console.log("🔗 Connecting wallet...");
+      if (window.ethereum) {
+        try {
+          const provider = new ethers.providers.Web3Provider(window.ethereum);
+          await provider.send("eth_requestAccounts", []);
+          signer = provider.getSigner();
+          userAddress = await signer.getAddress();
+          
+          const walletElement = document.getElementById("wallet");
+          walletElement.innerHTML = `<i class="fas fa-circle" style="color: #10b981;"></i> Connected: ${userAddress.slice(0, 6)}...${userAddress.slice(-4)}`;
+          walletElement.className = "wallet-status wallet-connected";
+
+          contract = new ethers.Contract(contractAddress, abi, signer);
+          console.log("✅ Contract loaded:", contract);
+          
+          // Check admin status
+          checkAdminStatus();
+          
+          // Load initial stats
+          loadStats();
+          
+        } catch (err) {
+          console.error("❌ Failed to connect:", err);
+          showStatus("uploadStatus", "Failed to connect wallet: " + err.message, "error");
+        }
+      } else {
+        alert("MetaMask not found. Please install MetaMask to use this DApp.");
+      }
+    }
+
+    async function checkAdminStatus() {
+      try {
+        const isAdminUser = await contract.isAdmin(userAddress);
+        const adminElement = document.getElementById("adminStatus");
+        if (isAdminUser) {
+          adminElement.innerHTML = `<div style="background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 10px; border-radius: 8px; margin-top: 10px; border: 1px solid rgba(16, 185, 129, 0.3);">👑 Admin Access Granted</div>`;
+        } else {
+          adminElement.innerHTML = `<div style="background: rgba(251, 191, 36, 0.2); color: #f59e0b; padding: 10px; border-radius: 8px; margin-top: 10px; border: 1px solid rgba(251, 191, 36, 0.3);">👤 Regular User (View Only)</div>`;
+        }
+      } catch (err) {
+        console.error("Error checking admin status:", err);
+      }
+    }
+
+    async function uploadBooth() {
+      if (!contract) {
+        showStatus("uploadStatus", "Please connect your wallet first", "error");
+        return;
+      }
+
+      const boothId = document.getElementById("boothId").value.trim();
+      const turnout = parseInt(document.getElementById("turnout").value);
+      const resultHash = document.getElementById("resultHash").value.trim();
+
+      if (!boothId || !turnout || !resultHash) {
+        showStatus("uploadStatus", "Please fill in all fields", "error");
+        return;
+      }
+
+      if (turnout < 0 || turnout > 100) {
+        showStatus("uploadStatus", "Turnout must be between 0 and 100", "error");
+        return;
+      }
+
+      try {
+        // Show loading state
+        document.getElementById("uploadBtn").innerHTML = '<span class="loading"></span> Uploading...';
+        
+        const tx = await contract.uploadBoothData(boothId, turnout, resultHash);
+        showStatus("uploadStatus", "Transaction submitted. Waiting for confirmation...", "success");
+        
+        await tx.wait();
+        showStatus("uploadStatus", `✅ Booth data uploaded successfully! Tx: ${tx.hash.slice(0, 10)}...`, "success");
+        
+        // Clear form
+        document.getElementById("boothId").value = "";
+        document.getElementById("turnout").value = "";
+        document.getElementById("resultHash").value = "";
+        
+        // Refresh stats
+        loadStats();
+        
+      } catch (err) {
+        console.error("Upload error:", err);
+        showStatus("uploadStatus", "❌ Error: " + (err.reason || err.message), "error");
+      } finally {
+        document.getElementById("uploadBtn").innerHTML = '<i class="fas fa-cloud-upload-alt"></i> Upload to Blockchain';
+      }
+    }
+
+    async function getBooth() {
+      if (!contract) {
+        document.getElementById("boothData").innerText = "Please connect your wallet first";
+        return;
+      }
+
+      const boothId = document.getElementById("lookupBoothId").value.trim();
+      if (!boothId) {
+        document.getElementById("boothData").innerText = "Please enter a booth ID";
+        return;
+      }
+
+      try {
+        const data = await contract.getBoothData(boothId);
+        const displayData = `
+🗳️ BOOTH DATA
+═══════════════════════════
+Booth ID: ${data.boothId}
+Turnout: ${data.turnoutPercent}%
+Result Hash: ${data.resultHash}
+Uploaded By: ${data.uploadedBy}
+Timestamp: ${new Date(data.timestamp * 1000).toLocaleString()}
+Status: ${data.isValid ? '✅ Valid' : '❌ Invalid'}
+═══════════════════════════`;
+        
+        document.getElementById("boothData").innerText = displayData;
+      } catch (err) {
+        document.getElementById("boothData").innerText = "❌ Error: " + (err.reason || err.message);
+      }
+    }
+
+    async function getAllBooths() {
+      if (!contract) return;
+
+      try {
+        const boothIds = await contract.getAllBoothIds();
+        const boothGrid = document.getElementById("boothGrid");
+        
+        if (boothIds.length === 0) {
+          boothGrid.innerHTML = '<p style="text-align: center; color: #6b7280; grid-column: 1 / -1;">No booth data available</p>';
+          return;
+        }
+
+        boothGrid.innerHTML = '<div style="text-align: center; color: #2563eb; grid-column: 1 / -1;">Loading booth data...</div>';
+
+        let boothsHtml = '';
+        let totalTurnout = 0;
+        let validBooths = 0;
+        let lastTimestamp = 0;
+
+        for (const boothId of boothIds) {
+          try {
+            const data = await contract.getBoothData(boothId);
+            if (data.isValid) {
+              totalTurnout += parseInt(data.turnoutPercent);
+              validBooths++;
+              if (data.timestamp > lastTimestamp) {
+                lastTimestamp = data.timestamp;
+              }
+
+              boothsHtml += `
+                <div class="booth-item">
+                  <div class="booth-id">${data.boothId}</div>
+                  <div class="booth-turnout">${data.turnoutPercent}%</div>
+                  <div class="booth-meta">
+                    <div>📅 ${new Date(data.timestamp * 1000).toLocaleDateString()}</div>
+                    <div>👤 ${data.uploadedBy.slice(0, 6)}...${data.uploadedBy.slice(-4)}</div>
+                    <div>📄 Hash: ${data.resultHash.slice(0, 15)}...</div>
+                  </div>
+                </div>`;
+            }
+          } catch (err) {
+            console.error(`Error loading booth ${boothId}:`, err);
+          }
+        }
+
+        boothGrid.innerHTML = boothsHtml || '<p style="text-align: center; color: #6b7280; grid-column: 1 / -1;">No valid booth data found</p>';
+
+        // Update stats
+        document.getElementById("totalBooths").innerText = validBooths;
+        document.getElementById("avgTurnout").innerText = validBooths > 0 ? Math.round(totalTurnout / validBooths) + '%' : '0%';
+        document.getElementById("lastUpdate").innerText = lastTimestamp > 0 ? new Date(lastTimestamp * 1000).toLocaleDateString() : '-';
+
+      } catch (err) {
+        console.error("Error loading all booths:", err);
+        document.getElementById("boothGrid").innerHTML = '<p style="text-align: center; color: #ef4444; grid-column: 1 / -1;">Error loading booth data</p>';
+      }
+    }
+
+    async function loadStats() {
+      if (!contract) return;
+
+      try {
+        const totalBooths = await contract.getTotalBooths();
+        document.getElementById("totalBooths").innerText = totalBooths.toString();
+      } catch (err) {
+        console.error("Error loading stats:", err);
+      }
+    }
+
+    function showStatus(elementId, message, type) {
+      const element = document.getElementById(elementId);
+      element.innerText = message;
+      element.className = `status-message status-${type}`;
+      
+      // Auto-clear success messages after 5 seconds
+      if (type === "success") {
+        setTimeout(() => {
+          element.innerText = "";
+          element.className = "";
+        }, 5000);
+      }
+    }
+
+    // Auto-connect on page load if already connected
+    window.addEventListener('load', async () => {
+      if (window.ethereum && window.ethereum.selectedAddress) {
+        connectWallet();
+      }
+    });
+  </script>
+</body>
+</html>
